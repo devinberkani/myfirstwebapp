@@ -11,8 +11,10 @@
 		<div class="container">
 			<h1>Enter Todo Details</h1>
 			<form:form method="post" modelAttribute="todo">
-			<!-- Description path maps this input to the description in todo bean -->
-				Description: <form:input type="text" path="description" required="required" />
+			<!-- cssClass is how you declare css classes for spring tags  -->
+			<div><form:errors path="description" cssClass="text-warning"/></div>
+			<!-- Description path maps this input to the description in todo bean, which is referenced via the modelAttribute above -->
+				Description:<form:input type="text" path="description" required="required" />
 				<form:input type="hidden" path="id" />
 				<form:input type="hidden" path="done" />
 				<input type="submit" class="btn btn-success"/>
